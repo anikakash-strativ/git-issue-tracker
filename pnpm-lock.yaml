@@ -23,6 +23,9 @@ importers:
       i18next:
         specifier: ^23.16.5
         version: 23.16.5
+      npm-check-updates:
+        specifier: ^18.0.1
+        version: 18.0.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1562,6 +1565,11 @@ packages:
 
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
+
+  npm-check-updates@18.0.1:
+    resolution: {integrity: sha512-MO7mLp/8nm6kZNLLyPgz4gHmr9tLoU+pWPLdXuGAx+oZydBHkHWN0ibTonsrfwC2WEQNIQxuZagYwB67JQpAuw==}
+    engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
+    hasBin: true
 
   nwsapi@2.2.13:
     resolution: {integrity: sha512-cTGB9ptp9dY9A5VbMSe7fQBcl/tt22Vcqdq8+eN93rblOuE0aCFu4aZ2vMwct/2t+lFnosm8RkQW1I0Omb1UtQ==}
@@ -3773,6 +3781,8 @@ snapshots:
       tslib: 2.6.2
 
   node-releases@2.0.18: {}
+
+  npm-check-updates@18.0.1: {}
 
   nwsapi@2.2.13: {}
 
