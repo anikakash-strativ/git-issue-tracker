@@ -1,0 +1,159 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Design Dashboard UI",
+      "status": "In Progress",
+      "date": "2025-06-18",
+      "description": "Create the wireframes and high-fidelity UI designs for the admin dashboard using Figma."
+    },
+    {
+      "id": 2,
+      "title": "API Integration for Tasks",
+      "status": "Complete",
+      "date": "2025-06-10",
+      "description": "Successfully integrated the task module API endpoints with the frontend using React Query."
+    },
+    {
+      "id": 3,
+      "title": "Prepare Client Demo",
+      "status": "Pending",
+      "date": "2025-06-20",
+      "description": "Prepare a working demo of the project features to present to the client on Zoom."
+    },
+    {
+      "id": 4,
+      "title": "Bug Fix: Login Validation",
+      "status": "In Progress",
+      "date": "2025-06-16",
+      "description": "Fix the issue where users can submit an empty login form and still proceed to the dashboard."
+    },
+    {
+      "id": 5,
+      "title": "Write Documentation",
+      "status": "Pending",
+      "date": "2025-06-25",
+      "description": "Document all REST API endpoints and provide usage examples for frontend developers."
+    },
+    {
+      "id": 6,
+      "title": "Optimize Images",
+      "status": "Complete",
+      "date": "2025-06-08",
+      "description": "Compress and convert all images to WebP format to improve load times."
+    },
+    {
+      "id": 7,
+      "title": "Setup CI/CD Pipeline",
+      "status": "In Progress",
+      "date": "2025-06-18",
+      "description": "Configure GitHub Actions to automate build and deployment for staging and production environments."
+    },
+    {
+      "id": 8,
+      "title": "Add Dark Mode",
+      "status": "Pending",
+      "date": "2025-06-22",
+      "description": "Implement light and dark theme switching using context API and styled-components."
+    }
+  ],
+  "githubStats": [
+    {
+      "id": 1,
+      "username": "anikakash",
+      "userData": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/12345678?v=4",
+        "name": "Anik Akash",
+        "followers": 120,
+        "following": 45,
+        "public_repos": 30
+      },
+      "commitActivity": {
+        "data": [
+          5,
+          10,
+          0,
+          12,
+          8,
+          15,
+          18,
+          0,
+          9,
+          13,
+          7,
+          20,
+          11,
+          10,
+          5,
+          3,
+          2,
+          8,
+          0,
+          10,
+          5,
+          0,
+          14,
+          7,
+          10,
+          6,
+          8,
+          0,
+          4,
+          12
+        ],
+        "labels": [
+          "2025-06-01",
+          "2025-06-02",
+          "2025-06-03",
+          "2025-06-04",
+          "2025-06-05",
+          "2025-06-06",
+          "2025-06-07",
+          "2025-06-08",
+          "2025-06-09",
+          "2025-06-10",
+          "2025-06-11",
+          "2025-06-12",
+          "2025-06-13",
+          "2025-06-14",
+          "2025-06-15",
+          "2025-06-16",
+          "2025-06-17",
+          "2025-06-18",
+          "2025-06-19",
+          "2025-06-20",
+          "2025-06-21",
+          "2025-06-22",
+          "2025-06-23",
+          "2025-06-24",
+          "2025-06-25",
+          "2025-06-26",
+          "2025-06-27",
+          "2025-06-28",
+          "2025-06-29",
+          "2025-06-30"
+        ]
+      },
+      "activityBreakdown": [
+        {
+          "commits": 40,
+          "pullRequests": 10,
+          "issues": 5,
+          "codeReviews": 15
+        },
+        {
+          "commits": 20,
+          "pullRequests": 5,
+          "issues": 2,
+          "codeReviews": 10
+        },
+        {
+          "commits": 30,
+          "pullRequests": 8,
+          "issues": 3,
+          "codeReviews": 8
+        }
+      ]
+    }
+  ]
+}
