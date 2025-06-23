@@ -2,6 +2,7 @@ import { taskApi } from './apiClient';
 
 export interface GitUserData {
   avatar_url: string;
+  bio: string;
   name: string;
   followers: number;
   following: number;
