@@ -1,46 +1,42 @@
+import { GithubFilled } from '@ant-design/icons';
 import { Col, Row, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import { StatCard } from '@/features/dashboard/components/StatCard';
-import { useAuthStore } from '@/stores/useAuthStore';
+import { useTaskStats } from '@/hooks/useTaskStats';
 
-const dashboardStats = {
-  users: 1234,
-  revenue: 5678,
-  orders: 90,
-};
 const DashboardHome = () => {
   const { t } = useTranslation('translation', {
     keyPrefix: 'pages.dashboard',
   });
 
-  const user = useAuthStore((state) => state.user);
+  const { statistics, isLoading, error } = useTaskStats();
+  console.log({ statistics });
+  if (isLoading || !statistics) return <div>Loading...</div>;
+  if (error) return <div>Error loading data</div>;
 
   return (
     <>
       <Row style={{ marginBottom: 24 }}>
         <Col xs={24} md={8}>
-          <Typography.Title level={4} style={{ margin: 0 }}>
-            {t('welcome', { name: user?.name })}
+          <Typography.Title level={4} style={{ marginTop: '0px' }}>
+            <span>{<GithubFilled />}</span>
+            {' GitHub Profile'}
           </Typography.Title>
         </Col>
       </Row>
 
-      <Row gutter={[24, 24]}>
-        <Col xs={24} md={8}>
-          <StatCard title={t('users')} value={dashboardStats.users} />
+      <Row gutter={[16, 16]}>
+        <Col xs={24} sm={12} md={8}>
+          <StatCard title={t('total')} value={statistics?.totalComplete} />
         </Col>
 
-        <Col xs={24} md={8}>
-          <StatCard
-            title={t('revenue')}
-            value={dashboardStats.revenue}
-            prefix="$"
-          />
+        <Col xs={24} sm={12} md={8}>
+          <StatCard title={t('complete')} value={statistics?.totalComplete} />
         </Col>
 
-        <Col xs={24} md={8}>
-          <StatCard title={t('orders')} value={dashboardStats.orders} />
+        <Col xs={24} sm={12} md={8}>
+          <StatCard title={t('pending')} value={statistics?.totalPending} />
         </Col>
       </Row>
     </>
