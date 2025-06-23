@@ -2,6 +2,7 @@ import { GithubFilled } from '@ant-design/icons';
 import { Col, Row, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 
+import GithubStats from './GithubStats';
 import { StatCard } from '@/features/dashboard/components/StatCard';
 import { useTaskStats } from '@/hooks/useTaskStats';
 
@@ -11,7 +12,6 @@ const DashboardHome = () => {
   });
 
   const { statistics, isLoading, error } = useTaskStats();
-  console.log({ statistics });
   if (isLoading || !statistics) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
@@ -39,6 +39,7 @@ const DashboardHome = () => {
           <StatCard title={t('pending')} value={statistics?.totalPending} />
         </Col>
       </Row>
+      <GithubStats />
     </>
   );
 };
