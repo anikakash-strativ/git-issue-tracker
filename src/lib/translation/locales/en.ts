@@ -2,6 +2,7 @@ export const en = {
   translation: {
     sidebar: {
       dashboard: 'Dashboard',
+      task: 'Task',
     },
     features: {
       authentication: {
