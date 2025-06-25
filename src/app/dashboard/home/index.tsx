@@ -28,7 +28,7 @@ const DashboardHome = () => {
 
       <Row gutter={[16, 16]}>
         <Col xs={24} sm={12} md={8}>
-          <StatCard title={t('total')} value={statistics?.totalComplete} />
+          <StatCard title={t('total')} value={statistics?.totalTasks} />
         </Col>
 
         <Col xs={24} sm={12} md={8}>
