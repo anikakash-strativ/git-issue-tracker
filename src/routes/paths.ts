@@ -10,10 +10,12 @@ export const PRIVATE_ROUTES = {
   TASK_EDIT: 'edit',
   TASK_VIEW: 'view/:id',
   PARAM_ID: ':id',
+  SETTING: 'setting',
 };
 
 export const ROUTES = {
   LOGIN: '/',
   DASHBOARD: '/dashboard',
   TASK: 'task',
+  SETTING: 'setting',
 };

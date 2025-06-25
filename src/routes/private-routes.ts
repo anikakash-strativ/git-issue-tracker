@@ -2,7 +2,7 @@ import { lazy } from 'react';
 
 import { PRIVATE_ROUTES } from './paths';
 
-const { DASHBOARD, TASK, TASK_VIEW, PARAM_ID } = PRIVATE_ROUTES;
+const { DASHBOARD, TASK, TASK_VIEW, SETTING } = PRIVATE_ROUTES;
 
 export const privateRoutes = [
   {
@@ -17,5 +17,9 @@ export const privateRoutes = [
   {
     path: `${TASK}/${TASK_VIEW}`,
     Component: lazy(() => import('@/app/dashboard/task/ViewTask')),
+  },
+  {
+    path: `${SETTING}`,
+    Component: lazy(() => import('@/app/dashboard/setting')),
   },
 ];
