@@ -2,6 +2,8 @@ export const en = {
   translation: {
     sidebar: {
       dashboard: 'Dashboard',
+      task: 'Task',
+      setting: 'Setting',
     },
     features: {
       authentication: {
@@ -15,10 +17,13 @@ export const en = {
     },
     pages: {
       dashboard: {
-        users: 'Users',
-        revenue: 'Revenue',
-        orders: 'Orders',
+        total: 'Total Task',
+        complete: 'Completed Tasks',
+        pending: 'Pending Tasks',
         welcome: 'Welcome, {{name}}',
+        followers: 'Followers',
+        following: 'Following',
+        repo: 'Repositories',
       },
     },
     common: {

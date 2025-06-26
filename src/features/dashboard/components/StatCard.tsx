@@ -16,7 +16,9 @@ interface StatCardProps {
 export const StatCard = ({ title, value, prefix = '' }: StatCardProps) => {
   return (
     <StyledCard>
-      <Title level={5}>{title}</Title>
+      <Title level={5} style={{ color: '#6c757d', fontWeight: 500 }}>
+        {title}
+      </Title>
       <StatNumber>
         {prefix}
         {value}

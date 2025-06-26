@@ -1,11 +1,15 @@
-import { HomeOutlined } from '@ant-design/icons';
+import {
+  HomeOutlined,
+  SettingOutlined,
+  UnorderedListOutlined,
+} from '@ant-design/icons';
 import { MenuProps } from 'antd';
 import { useAccessContext } from 'react-access-boundary-v2';
 import { useTranslation } from 'react-i18next';
 
 import { PRIVATE_ROUTES } from '@/routes/paths';
 
-const { DASHBOARD } = PRIVATE_ROUTES;
+const { DASHBOARD, TASK, SETTING } = PRIVATE_ROUTES;
 
 type ITEM_GROUP = {
   type: 'group';
@@ -33,6 +37,16 @@ const MenuItems = () => {
       key: DASHBOARD,
       icon: <HomeOutlined />,
       label: t('dashboard'),
+    },
+    {
+      key: TASK,
+      icon: <UnorderedListOutlined />,
+      label: t('task'),
+    },
+    {
+      key: SETTING,
+      icon: <SettingOutlined />,
+      label: t('setting'),
     },
   ];
 

@@ -4,11 +4,18 @@ export const PUBLIC_ROUTES = {
 
 export const PRIVATE_ROUTES = {
   INDEX: '',
-
   DASHBOARD: 'dashboard',
+  TASK: 'task',
+  CREATE: 'create',
+  TASK_EDIT: 'edit',
+  TASK_VIEW: 'view/:id',
+  PARAM_ID: ':id',
+  SETTING: 'setting',
 };
 
 export const ROUTES = {
   LOGIN: '/',
   DASHBOARD: '/dashboard',
+  TASK: 'task',
+  SETTING: 'setting',
 };
