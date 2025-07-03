@@ -1,5 +1,5 @@
 import { taskApi } from './apiClient';
-import { TaskType } from './taskService';
+import { type TaskType } from './taskService';
 
 const taskByIdService = {
   getTask: async (id: number): Promise<TaskType> => {

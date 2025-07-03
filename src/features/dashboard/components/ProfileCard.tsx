@@ -7,7 +7,7 @@ import {
   UserBio,
   UserInfo,
 } from '@/features/dashboard/styles/profileCardGithub-styles';
-import { GitUserData } from '@/services/gitService';
+import type { GitUserData } from '@/services/gitService';
 
 interface ProfileCardType {
   userData: GitUserData;

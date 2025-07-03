@@ -23,7 +23,8 @@ const taskService = {
       return response.data;
     } catch (err) {
       console.error('Error fetching tasks:', err);
-      throw err;
+      // Throw a more user-friendly error
+      throw new Error('Failed to load tasks. Please try again later.');
     }
   },
 
@@ -51,7 +52,8 @@ const taskService = {
       };
     } catch (error) {
       console.error('Error calculating task statistics:', error);
-      throw error;
+      // Throw a more user-friendly error
+      throw new Error('Failed to calculate task statistics. Please try again later.');
     }
   },
 };

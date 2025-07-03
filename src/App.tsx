@@ -1,41 +1,31 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Suspense } from 'react';
-import { I18nextProvider } from 'react-i18next';
+// src/App.tsx
+// import { BrowserRouter} from "react-router-dom";
 
-import ConfigurationsProvider from './components/Providers/ConfigurationsProvider';
-import ThemeProviderWrapper from './components/Providers/ThemeProviderWrapper';
-import i18n from '@/lib/translation/i18n';
-import { BaseRoutes } from '@/routes';
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { useTheme } from "./context/ThemeContext";
+import { darkTheme, lightTheme } from "./theme";
+// import AppLayout from "./components/Layout/DashboardLayout/index";
+import GlobalStyles from "./GlobalStyle/fonts";
+import { BaseRoutes } from "./routes";
 
-import { Spin } from '@/components/Atoms/Spin';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+const App = () => {
+  const themeContext = useTheme();
+  if (!themeContext) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  const { themeMode } = themeContext;
+  const theme = themeMode === "light" ? lightTheme : darkTheme;
 
-function App() {
   return (
-    <I18nextProvider i18n={i18n}>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProviderWrapper>
-          <ErrorBoundary>
-            <ConfigurationsProvider
-              loading={<Spin type="window-centre" size="large" />}
-            >
-              <Suspense fallback={<Spin type="window-centre" size="large" />}>
-                <BaseRoutes />
-              </Suspense>
-            </ConfigurationsProvider>
-          </ErrorBoundary>
-        </ThemeProviderWrapper>
-      </QueryClientProvider>
-    </I18nextProvider>
+    <StyledThemeProvider theme={theme}>
+      <GlobalStyles/>
+      {/* <BrowserRouter>
+        <AppLayout />
+      </BrowserRouter> */}
+      <BaseRoutes/>
+    </StyledThemeProvider>
   );
-}
+};
 
 export default App;

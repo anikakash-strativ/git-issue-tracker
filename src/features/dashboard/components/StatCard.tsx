@@ -3,7 +3,7 @@ import { Typography } from 'antd';
 import {
   StatNumber,
   StyledCard,
-} from '@/features/dashboard/styles/dashboard-styles';
+} from '../../../features/dashboard/styles/dashboard-styles';
 
 const { Title } = Typography;
 

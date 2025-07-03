@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import taskService, { TaskStatistics } from '../services/taskService';
+import taskService, { type TaskStatistics } from '../services/taskService';
 
 export const useTaskStats = () => {
   const { data, isLoading, error } = useQuery<TaskStatistics>({

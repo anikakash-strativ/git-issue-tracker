@@ -53,7 +53,7 @@ const GithubStats: React.FC = () => {
   // Handle no data
   if (!data) return <div>No GitHub data available</div>;
   const userData = data?.userDetails;
-  const activityBreakdown = data?.userACtivityBreakdown;
+  const activityBreakdown = data?.userActivityBreakdown;
   const commitActivity = data?.userCommitActivity;
   // const userBio =
   //   'Software Engineer @strativ-dev || Ex. Competitive Programmer || Open Source Enthusiast || love to learn and eat';

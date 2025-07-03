@@ -1,481 +1,113 @@
-# Frontend Documentation
+# DevTrack - Personal GitHub Issue Tracker
 
-## Introduction
+DevTrack is a personal productivity application designed to help developers track and manage GitHub repository issues efficiently. This React-based dashboard provides a clean, intuitive interface for monitoring your project's issues, their statuses (based on PRs and closed tickets), and overall project progress.
 
-Welcome to our React TypeScript boilerplate! This project is designed to provide a solid, scalable foundation for building modern web applications. We've carefully selected technologies and structured the project to make development smooth, efficient, and enjoyable.
+![DevTrack Dashboard](https://via.placeholder.com/800x450?text=DevTrack+Dashboard)
 
-## Project Overview
+## The Story Behind DevTrack
 
-Our boilerplate is built with:
+As a developer working across multiple repositories and contributing to several open source projects, I found myself constantly switching between different GitHub tabs trying to track issues I was working on or responsible for. The GitHub interface, while powerful, didn't give me the personalized overview I needed.
 
-- React 18
-- TypeScript
-- Vite for lightning-fast development
-- React Router for routing
-- Tanstack React Query for data fetching
-- Zustand for state management
-- Axios for API interactions
-- Ant Design for UI components
-- Styled Components for styling
-- Vitest for testing
+After missing a few deadlines and losing track of critical tasks buried in the sea of notifications, I decided to build DevTrack - a single dashboard where I could see all my assigned issues, track my progress, and prioritize my work effectively.
 
-## Technologies Used
+What started as a simple weekend project has evolved into an indispensable tool in my daily workflow. Now I can instantly see which issues need attention, which PRs are awaiting review, and how my overall productivity has trended over time.
 
-- **React (v18.3.1)**: Our primary UI library, providing a component-based architecture
+## Key Features
 
-- **TypeScript (v5.6.2)**: Adding type safety and enhanced developer experience
-
-- **Vite (v5.4.10)**: Our blazing-fast build tool and development server
-
-- **Tanstack React Query (v5.59.20)**: Powerful data synchronization and caching
-- **Axios (v1.7.7)**: Promise-based HTTP client for API requests
-
-- **Zustand (v4.5.4)**: State management for React applications
-
-- **React Router (v6.27.0)**: Declarative routing for React applications
-
-- **Ant Design (v5.22.1)**: Comprehensive React UI library with a wide range of pre-built components
-
-- **Styled Components (v6.1.13)**: CSS-in-JS solution for component-level styling
-
-- **Vitest (v2.1.5)**: Testing framework for JavaScript and TypeScript
-
-- **i18next (v23.16.5)**: Internationalization framework
-
-## Project Structure
-
-```
-src/
-├── app/                # Top-level application pages
-│   ├── authentication/
-│   └── dashboard/
-├── assets/             # Static assets and global theme
-├── components/         # Shared components
-│   ├── Atoms/          # Basic building blocks
-│   ├── ErrorBoundary/  # Error handling
-│   ├── Hoc/            # Higher-order components
-│   ├── Layouts/        # Layout components
-│   └── Providers/      # Context providers
-├── features/           # Feature-specific modules
-│   ├── authentication/
-│   │   ├── components/
-│   │   ├── styles/
-│   │   └── types/
-│   └── dashboard/
-├── hooks/              # Custom hooks
-├── lib/                # Configuration and utilities
-│   ├── config/         # Application configuration
-│   ├── theme/          # Theme configuration
-│   ├── translation/    # i18n setup
-│   └── utils/          # Utility functions
-├── routes/             # Routing configuration
-├── services/           # API and authentication services
-├── stores/             # Global state management
-├── App.tsx             # Root application component
-└── main.tsx            # Application entry point
-```
-
-## Project Structure Responsibilities
-
-### `src/app/`
-
-Responsible for top-level page components that represent entire routes or views in the application.
-
-- **Purpose**: Compose page-level components using feature-specific components
-- **Contents**:
-  - High-level page components
-  - Page-specific layout and structure
-- **Examples**:
-  - `authentication/login/index.tsx`: Login page component
-  - `dashboard/home/index.tsx`: Dashboard home page
-
-### `src/assets/`
-
-Stores static assets and global styling resources.
-
-- **Purpose**: Centralize static files and global design tokens
-- **Contents**:
-  - SVG icons
-  - Global theme configurations
-  - Font files
-  - Global CSS or styling variables
-- **Examples**:
-  - `theme/globals.ts`: Global theme configuration
-  - `react.svg`: Application logo or icon
-
-### `src/components/`
-
-Houses shared components used across multiple features.
-
-- **Purpose**: Provide reusable UI building blocks and common functionality
-- **Structure**:
-  - `Atoms/`: Basic UI elements (buttons, inputs, typography)
-  - `ErrorBoundary/`: Error handling components
-  - `Hoc/`: Higher-order components for cross-cutting concerns
-  - `Layouts/`: Shared layout structures
-  - `Providers/`: Context providers for global state/settings
-- **Examples**:
-  - `Atoms/Button.tsx`: Reusable button component
-  - `Layouts/MainLayout.tsx`: Application shell layout
-  - `Providers/ThemeProvider.tsx`: Theme context provider
-
-### `src/features/`
-
-Organizes feature-specific modules with a modular and scalable approach.
-
-- **Purpose**: Encapsulate feature-related code with clear boundaries
-- **Structure**:
-  - `components/`: Reusable components for the feature
-  - `styles/`: Feature-specific styling
-  - `types/`: TypeScript type definitions
-- **Examples**:
-  - `authentication/`: Login, registration, authentication-related code
-  - `dashboard/`: Dashboard-specific components and logic
-
-#### Feature Module Breakdown
-
-- **`components/`**:
-  - Reusable React components specific to the feature
-  - Smaller, focused components that can be composed into pages
-- **`styles/`**:
-  - Styled-components or CSS modules
-  - Feature-specific styling logic
-- **`types/`**:
-  - TypeScript interfaces and type definitions
-  - Ensures type safety for the feature
-
-### `src/hooks/`
-
-Contains custom React hooks for shared functionality.
-
-- **Purpose**: Abstract common stateful logic and side effects
-- **Contents**:
-  - Feature-specific hooks
-  - Utility hooks
-  - Data fetching hooks
-- **Examples**:
-  - `useAuth.ts`: Authentication state and methods
-  - `useForm.ts`: Form handling logic
-  - `useLocalStorage.ts`: Local storage interactions
-
-### `src/lib/`
-
-Houses configuration and utility functions.
-
-- **Purpose**: Centralize application configuration and common utilities
-- **Structure**:
-  - `config/`: Application-wide configuration
-  - `theme/`: Theme system setup
-  - `translation/`: Internationalization configuration
-  - `utils/`: Helper functions and utilities
-- **Examples**:
-  - `config/constants.ts`: Global constants
-  - `utils/formatters.ts`: Data formatting utilities
-  - `translation/i18n.ts`: Translation setup
-
-### `src/routes/`
-
-Manages application routing configuration.
-
-- **Purpose**: Define and organize application routes
-- **Contents**:
-  - Route definitions
-  - Route protection logic
-  - Navigation paths
-- **Key Files**:
-  - `index.tsx`: Main router configuration
-  - `paths.ts`: Centralized route constants
-  - `private-routes.ts`: Protected route definitions
-  - `public-routes.ts`: Publicly accessible routes
-
-### `src/services/`
-
-Handles external service interactions and API communications.
-
-- **Purpose**: Centralize network requests and service logic
-- **Contents**:
-  - API call implementations
-  - Authentication service
-  - External service integrations
-- **Examples**:
-  - `api.ts`: Base API configuration
-  - `auth.ts`: Authentication-related service methods
-
-### `src/stores/`
-
-Manages global state using Zustand.
-
-- **Purpose**: Provide centralized state management
-- **Contents**:
-  - Global state stores
-  - State manipulation logic
-- **Examples**:
-  - `useAuthStore.ts`: Authentication state management
-  - Other feature-specific stores
-
-## Architectural Principles
-
-1. **Modularity**: Each feature is self-contained and can be developed independently
-2. **Type Safety**: Comprehensive TypeScript usage
-3. **Separation of Concerns**: Clear boundaries between different parts of the application
-4. **Scalability**: Structure allows easy addition of new features
+- **Dashboard Overview**: Get a bird's eye view of all your issues across repositories with key metrics and statistics
+- **Issue Tracking**: Monitor issues by status (Not Started, In Progress, Completed)
+- **PR Status Tracking**: See which issues have associated PRs and their current status
+- **Custom Task Management**: Create personal tasks related to your GitHub issues
+- **Dark/Light Mode**: Work comfortably day or night with theme options
+- **Responsive Design**: Access your productivity dashboard on any device
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v22.0.0 or newer)
-- PNPM (v9.0.0 or newer)
-
-### Installation Steps
-
-1. Clone the repository
-2. Run `pnpm install` to install dependencies
-3. Copy `env.example` to `.env` and configure your environment variables
-4. Run `pnpm dev` to start the development server
-5. To login, use the following credentials:
-   - Email: `john@mail.com`
-   - Password: `changeme`
-
-## Development Workflow
-
-### Running the Project
-
-- `pnpm dev`: Start development server
-- `pnpm build`: Create production build
-- `pnpm lint`: Run ESLint
-- `pnpm preview`: Preview production build
-
-### Code Quality Tools
-
-- **ESLint**: Ensures code quality and catches potential issues
-- **Prettier**: Maintains consistent code formatting
-- **Husky**: Runs linters before commits
-
-## State Management
-
-We use Zustand for state management in our application. This section outlines our conventions and best practices for working with Zustand stores.
-
-### Store Structure
-
-Each store should be defined in a separate file under `src/stores` directory. The store file should:
-
-1. Define an interface for the store state
-2. Create and export the store using Zustand's `create` function
-3. Include any necessary actions as part of the store
-
-Example structure:
-
-```typescript
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
-
-interface StoreState {
-  // State properties
-  someProperty: SomeType;
-
-  // Actions
-  setSomeProperty: (value: SomeType) => void;
-}
-
-export const useStore = create<StoreState>()(
-  devtools(
-    persist(
-      // if you need to persist in local storage
-      (set) => ({
-        // Initial state and actions implementation
-      }),
-      { name: 'storeName' }
-    ),
-    { name: 'Store Name' } // for persist
-  )
-);
-```
-
-### Middleware
-
-We commonly use two middleware functions with our stores:
-
-- `devtools`: For Redux DevTools integration
-- `persist`: For persisting store state in localStorage
-
-### Naming Conventions
-
-- Store hooks should be named `useStoreName` (e.g., `useAuthStore`)
-- Action names should be descriptive and start with a verb (e.g., `setUser`, `updateUser`)
-
-### Using Stores in Components
-
-Import and use store hooks in components as follows:
-
-```typescript
-import useStoreName from './path/to/store';
-
-function MyComponent() {
-	const value = useStoreName((state) => state.someProperty);
-	const setValue = useStoreName((state) => state.setSomeProperty);
-
-	// or
-
-	const { value, setValue } = useStoreName();
-	// Use value and setValue in your component
-}
-```
-
-### Best Practices
-
-- Keep stores focused on a specific domain or feature
-- Use TypeScript for type safety in store definitions
-- Prefer multiple small stores over a single large store
-- Use selectors to access specific parts of the state
-- Clear sensitive data when appropriate (e.g., on logout)
-
-## Naming Conventions
-
-### File Naming
-
-- Use PascalCase for component files (e.g., `LoginForm.tsx`, `UserProfileCard.tsx`).
-- Use camelCase for other JavaScript/TypeScript files (e.g., `authService.ts`, `userUtils.ts`).
-- Use lowercase for non-component files and directories (e.g., `assets/`, `features/`).
-
-### Component Naming
-
-- Use PascalCase for component names (e.g., `LoginForm`, `UserProfileCard`).
-- Use descriptive names that reflect the component's purpose.
-- For component directories, use PascalCase and keep related files together (e.g., `LoginForm/LoginForm.tsx`, `LoginForm/styles.ts`).
-
-### Variable and Function Naming
-
-- Use camelCase for variable and function names (e.g., `userEmail`, `handleLogin`).
-- Use descriptive names that convey purpose.
-- For boolean variables, prefix with "is", "has", or "should" (e.g., `isAuthenticated`, `hasPermission`, `shouldRefreshData`).
-
-### Constants Naming
-
-- Use UPPER_SNAKE_CASE (e.g., `MAX_USER_ATTEMPTS`, `API_BASE_URL`).
-- Group related constants in a single file (e.g., `constants/index.ts`).
-
-### TypeScript Types and Interfaces
-
-- Use PascalCase (e.g., `UserProfile`, `AuthenticationResponse`).
-
-### CSS Naming
-
-- Use kebab-case for CSS class names (e.g., `login-form`, `user-profile-card`).
-
-### Event Handlers
-
-- Prefix with `handle` (e.g., `handleLogin`, `handleInputChange`)
-
-### Store and Hook Naming
-
-- Prefix with `use` (e.g., `useAuthStore`, `useUserProfile`)
-
-## Testing
-
-We use Vitest with React Testing Library for our testing framework.
-
-### Basic Test Structure
-
-```typescript
-import { render, screen } from '@testing-library/react';
-import { describe, it } from 'vitest';
-import MyComponent from './MyComponent';
-
-describe('MyComponent', () => {
-  it('renders the component', () => {
-    render(<MyComponent />);
-
-    screen.debug();
-  });
-});
-```
-
-### Test Commands
-
-- `pnpm test`: Run all tests
-- `pnpm test:ui`: Run tests with UI
-- `pnpm test:watch`: Run tests in watch mode
-
-### Common Testing Patterns
-
-1. **Component Rendering**
-
-```typescript
-import { render, screen } from '@testing-library/react';
-import Button from './Button';
-
-describe('Button', () => {
-  it('renders with correct text', () => {
-    render(<Button>Click me</Button>);
-
-    expect(screen.getByText('Click me')).toBeInTheDocument();
-  });
-});
-```
-
-2. **User Interactions**
-
-```typescript
-import { render, screen, fireEvent } from '@testing-library/react';
-import Counter from './Counter';
-
-describe('Counter', () => {
-  it('increments value on click', () => {
-    render(<Counter />);
-
-    fireEvent.click(screen.getByRole('button'));
-
-    expect(screen.getByText('Count: 1')).toBeInTheDocument();
-  });
-});
-```
-
-3. **Async Operations**
-
-```typescript
-import { render, screen } from '@testing-library/react';
-import UserProfile from './UserProfile';
-
-describe('UserProfile', () => {
-  it('loads user data', async () => {
-    render(<UserProfile />);
-
-    expect(await screen.findByText('Loading...')).toBeInTheDocument();
-    expect(await screen.findByText('User Name')).toBeInTheDocument();
-  });
-});
-```
+- Node.js (v18 or later)
+- GitHub account with personal access token (for API access)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/devtrack.git
+   cd devtrack
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Create a `.env` file in the root directory with your GitHub token:
+   ```
+   VITE_GITHUB_TOKEN=your_github_personal_access_token
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+## Usage
+
+After logging in with your GitHub account, DevTrack will:
+
+1. **Connect to your GitHub account**: Automatically fetch issues from repositories you contribute to
+2. **Display your dashboard**: Show statistics of your open, in-progress, and closed issues
+3. **Track PR status**: Indicate which issues have pull requests and their current state (draft, open, merged)
+4. **Filter and sort**: Organize issues by priority, repository, or due date
+
+### Adding Your Repositories
+
+To track specific repositories:
+
+1. Navigate to Settings
+2. Click "Add Repository"
+3. Enter the repository name (format: `owner/repo`)
+4. Select tracking preferences
+
+## Tech Stack
+
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Components**: Ant Design
+- **Styling**: Styled Components
+- **State Management**: React Query
+- **Data Visualization**: Recharts
+- **Backend Mock**: JSON Server (for development)
+
+## Real-Life Impact
+
+> "DevTrack transformed how I manage my open source contributions. Before, I was constantly context-switching between repositories and losing track of which issues needed my attention. Now, I have everything organized in one place, and my productivity has improved dramatically. I can focus on coding rather than on keeping track of what I need to code."
+> 
+> — Alex, Full Stack Developer
 
 ## Contributing
 
-### Pull Request Process
+Contributions are welcome! If you have ideas for new features or find any bugs:
 
-- Create a branch for your feature or bugfix from `dev` branch. Follow the branch name format.
-  ```bash
-     git checkout -b feature/feature-name
-  ```
-- Make your changes, ensuring they match our coding standards.
-- Make sure there is no merge-conflicts by pulling the `dev` branch.
-- Issue a pull request and add your teammates as reviewers.
-- Respond to any feedback from reviewers.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Commit Message Guidelines
+## License
 
-Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) specification:
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-```
-<type>(ticket-number): <message>
+## Acknowledgments
 
-[optional body]
+- Built with React, Vite, and TypeScript
+- UI components from Ant Design
+- Special thanks to the open source community
 
-[optional footer(s)]
-```
+---
 
-Types: feat, fix, docs, style, refactor, test, chore.
-
-Example:
-
-```bash
-feat(AB-000): add login functionality
-```
+Made with ❤️ by [Anik Dash Akash]

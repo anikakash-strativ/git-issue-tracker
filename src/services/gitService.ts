@@ -28,11 +28,12 @@ export interface GitDataType {
   activityBreakdown: GitActivityBreakdown[];
 }
 
-export interface userDataType {
+// Standardized type naming with proper capitalization
+export interface UserDataType {
   userName: string;
   userDetails: GitUserData;
   userCommitActivity: GitCommitActivity;
-  userACtivityBreakdown: GitActivityBreakdown[];
+  userActivityBreakdown: GitActivityBreakdown[];
 }
 
 const gitDataService = {
@@ -41,26 +42,28 @@ const gitDataService = {
       const response = await taskApi.get('/githubStats');
       return response.data[0];
     } catch (err) {
-      console.error('Error fetching tasks:', err);
-      throw err;
+      console.error('Error fetching GitHub data:', err);
+      // Throw a more user-friendly error
+      throw new Error('Failed to fetch GitHub data. Please try again later.');
     }
   },
-  getGitUserData: async (): Promise<userDataType> => {
+  getGitUserData: async (): Promise<UserDataType> => {
     try {
       const userData = await gitDataService.getUser();
       const userName = userData?.username;
       const userDetails = userData?.userData;
       const userCommitActivity = userData?.commitActivity;
-      const userACtivityBreakdown = userData?.activityBreakdown;
+      const userActivityBreakdown = userData?.activityBreakdown;
       return {
         userName,
         userDetails,
         userCommitActivity,
-        userACtivityBreakdown,
+        userActivityBreakdown,
       };
     } catch (err) {
-      console.error('Error calculating task statistics:', err);
-      throw err;
+      console.error('Error fetching GitHub data:', err);
+      // Throw a more user-friendly error
+      throw new Error('Failed to fetch GitHub user data. Please try again later.');
     }
   },
 };

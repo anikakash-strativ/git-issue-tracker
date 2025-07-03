@@ -3,7 +3,7 @@ import { Button, Table } from 'antd';
 import styled from 'styled-components';
 
 import tableColumns from '../../../features/dashboard/utils/tableColumns';
-import { useTaskStats } from '@/hooks/useTaskStats';
+import { useTaskStats } from '../../../hooks/useTaskStats';
 
 const DataTable = styled.div`
   background-color: #ffffff;
